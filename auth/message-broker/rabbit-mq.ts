@@ -5,16 +5,19 @@ const amqplib = require('amqplib/callback_api');
 const queue = 'token-validation-queue';
 
 export const connectToRabbit = async () => {
-    amqplib.connect('amqp://localhost', (err, conn) => {
+    amqplib.connect('amqp://rabbitmq', (err, conn) => {
         if (err) {
             console.error('RabbitMQ connection error:', err);
             return;
         }
 
+        console.log('Connected to RabbitMQ successfully!');
+
+
         // Listener
         conn.createChannel((err, ch2) => {
-            if (err) {git remote add origin https://github.com/AlexJohnSadowski/shop-microservices.git
-                git push -u origin main channel error:', err);
+            if (err) {
+                console.error('RabbitMQ channel error:', err);
                 return;
             }
 
