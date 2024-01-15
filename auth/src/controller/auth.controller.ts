@@ -1,21 +1,21 @@
-import { CookieOptions, NextFunction, Request, Response } from 'express'
-import bcrypt from 'bcryptjs'
-import { LoginUserSchema, RegisterUserSchema } from '../schemas/user.schema'
-import { createUserWithCart, findUniqueUser, signTokens } from '../service/user/user.service'
-import { signJwt, verifyJwt } from '../service/jwt/jwt.service'
-import { Prisma } from '@prisma/client'
-import { client as redisClient } from '../../db/redis'
-import createAppError from "../utils/appError";
+import { CookieOptions, NextFunction, Request, Response } from "express"
+import bcrypt from "bcryptjs"
+import { LoginUserSchema, RegisterUserSchema } from "../schemas/user.schema"
+import { createUserWithCart, findUniqueUser, signTokens } from "../service/user/user.service"
+import { signJwt, verifyJwt } from "../service/jwt/jwt.service"
+import { Prisma } from "@prisma/client"
+import { client as redisClient } from "../../db/redis"
+import createAppError from "../utils/appError"
 
 const cookiesOptions: CookieOptions = {
     httpOnly: true,
-    sameSite: 'lax',
+    sameSite: "lax",
 }
 
 const minutesRefreshTokenExpiresIn = 60
 const minutesAccessTokenExpiresIn = 15
 
-if (process.env.NODE_ENV === 'production') cookiesOptions.secure = true
+if (process.env.NODE_ENV === "production") cookiesOptions.secure = true
 
 const accessTokenCookieOptions: CookieOptions = {
     ...cookiesOptions,
@@ -43,17 +43,17 @@ export const registerUserHandler = async (
         })
 
         res.status(201).json({
-            status: 'success',
+            status: "success",
             data: {
                 user,
             },
         })
     } catch (err: any) {
         if (err instanceof Prisma.PrismaClientKnownRequestError) {
-            if (err.code === 'P2002') {
+            if (err.code === "P2002") {
                 return res.status(409).json({
-                    status: 'fail',
-                    message: 'Email already exist, please use another email address',
+                    status: "fail",
+                    message: "Email already exist, please use another email address",
                 })
             }
         }
@@ -70,21 +70,21 @@ export const loginUserHandler = async (req: Request<{}, {}, LoginUserSchema>, re
         const user = await findUniqueUser({ email: email.toLowerCase() }, { id: true, email: true, password: true })
 
         if (!user || !(await bcrypt.compare(password, user.password))) {
-            return next(createAppError(400, 'Invalid email or password'))
+            return next(createAppError(400, "Invalid email or password"))
         }
 
         // Sign Tokens
         const { access_token, refresh_token } = await signTokens(user)
 
-        res.cookie('userId', user.id, accessTokenCookieOptions)
-        res.cookie('access_token', access_token, accessTokenCookieOptions)
-        res.cookie('refresh_token', refresh_token, refreshTokenCookieOptions)
-        res.cookie('logged_in', true, {
+        res.cookie("userId", user.id, accessTokenCookieOptions)
+        res.cookie("access_token", access_token, accessTokenCookieOptions)
+        res.cookie("refresh_token", refresh_token, refreshTokenCookieOptions)
+        res.cookie("logged_in", true, {
             ...accessTokenCookieOptions,
         })
         // respond
         res.status(200).json({
-            status: 'success',
+            status: "success",
             access_token,
             refresh_token,
         })
@@ -102,13 +102,13 @@ export const logoutUserHandler = async (req: Request<{}, {}, LoginUserSchema>, r
 
         const user = await findUniqueUser({ email: email.toLowerCase() }, { id: true, email: true, password: true })
 
-        const invalidJwt = signJwt({ userId: user.id }, 'accessTokenPrivateKey', { expiresIn: '-1s' })
-        const invalidJwtRefresh = signJwt({ userId: user.id }, 'refreshTokenPrivateKey', { expiresIn: '-1s' })
+        const invalidJwt = signJwt({ userId: user.id }, "accessTokenPrivateKey", { expiresIn: "-1s" })
+        const invalidJwtRefresh = signJwt({ userId: user.id }, "refreshTokenPrivateKey", { expiresIn: "-1s" })
 
-        res.clearCookie('refresh_token')
-            .clearCookie('access_token')
-            .clearCookie('logged_in')
-            .json({ message: 'Successfully logged out', access_token: invalidJwt, refresh_token: invalidJwtRefresh })
+        res.clearCookie("refresh_token")
+            .clearCookie("access_token")
+            .clearCookie("logged_in")
+            .json({ message: "Successfully logged out", access_token: invalidJwt, refresh_token: invalidJwtRefresh })
     } catch (e: any) {
         if (e instanceof Error) {
             next(createAppError(404, e.message))
@@ -116,11 +116,12 @@ export const logoutUserHandler = async (req: Request<{}, {}, LoginUserSchema>, r
     }
 }
 
-export const refreshAccessTokenHandler = async (req: Request, res: Response, next: NextFunction) => {
+export const refreshAccessTokenHandler = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const refresh_token = req.cookies.refresh_token
-    const message = 'Could not refresh access token'
+    const message = "Could not refresh access token"
 
     if (!refresh_token) {
+        console.log("refresh token, click")
         return next(createAppError(403, message))
     }
 
@@ -129,9 +130,10 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response, nex
         userId: string
         iat: number
         exp: number
-    }>(refresh_token, 'refreshTokenPrivateKey')
+    }>(refresh_token, "refreshTokenPrivateKey")
 
     if (!decoded) {
+        console.log("decoded, click")
         return next(createAppError(403, message))
     }
 
@@ -145,23 +147,24 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response, nex
     const user = await findUniqueUser({ id: JSON.parse(session).id })
 
     if (!user) {
+        console.log("user, click")
         return next(createAppError(403, message))
     }
 
     // Sign new access token
-    const access_token = signJwt({ sub: user.id }, 'accessTokenPrivateKey', {
+    const access_token = signJwt({ sub: user.id }, "accessTokenPrivateKey", {
         expiresIn: minutesAccessTokenExpiresIn,
     })
 
     // 4. Add Cookies
-    res.cookie('access_token', access_token, accessTokenCookieOptions)
-    res.cookie('logged_in', true, {
+    res.cookie("access_token", access_token, accessTokenCookieOptions)
+    res.cookie("logged_in", true, {
         ...accessTokenCookieOptions,
     })
 
     // 5. Send response
     res.status(200).json({
-        status: 'refresh succeeded',
+        status: "refresh succeeded",
         access_token,
     })
 }

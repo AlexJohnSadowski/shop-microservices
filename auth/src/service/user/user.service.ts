@@ -1,19 +1,11 @@
-import { Prisma, User } from '@prisma/client'
-import { signJwt } from '../jwt/jwt.service'
-import { client } from '../../../db/redis'
-import { prisma } from '../../../db/prisma'
+import { Prisma, User } from "@prisma/client"
+import { signJwt } from "../jwt/jwt.service"
+import { client } from "../../../db/redis"
+import { prisma } from "../../../db/prisma"
 
 export const createUserWithCart = async (input: Prisma.UserCreateInput): Promise<User> => {
     const user = await prisma.user.create({
         data: input,
-    })
-
-    await prisma.cart.create({
-        data: {
-            user: {
-                connect: { id: user.id },
-            },
-        },
     })
 
     return user
@@ -27,8 +19,8 @@ export const findUniqueUser = async (where: Prisma.UserWhereUniqueInput, select?
 }
 
 export const signTokens = async (user: Prisma.UserCreateInput) => {
-    const excludedFields = ['password']
-    const omit = <T extends object>(obj: Prisma.UserCreateInput & { [key: string]: any }, excludedFields: string[]) => {
+    const excludedFields = ["password"]
+    const omit = (obj: Prisma.UserCreateInput & { [key: string]: any }, excludedFields: string[]) => {
         const newObj = { ...obj }
         for (const field of excludedFields) {
             delete newObj[field]
@@ -44,12 +36,12 @@ export const signTokens = async (user: Prisma.UserCreateInput) => {
     })
 
     // 2. Create Access and Refresh tokens
-    const access_token = signJwt({ userId: user.id }, 'accessTokenPrivateKey', {
-        expiresIn: '15m',
+    const access_token = signJwt({ userId: user.id }, "accessTokenPrivateKey", {
+        expiresIn: "15m",
     })
 
-    const refresh_token = signJwt({ userId: user.id }, 'refreshTokenPrivateKey', {
-        expiresIn: '15m',
+    const refresh_token = signJwt({ userId: user.id }, "refreshTokenPrivateKey", {
+        expiresIn: "15m",
     })
 
     return { access_token, refresh_token }

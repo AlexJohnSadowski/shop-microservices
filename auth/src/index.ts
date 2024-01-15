@@ -1,23 +1,22 @@
-import {connectToRabbit} from "../message-broker/rabbit-mq";
-
-require('dotenv').config()
-import {connectToRedis} from "../db/redis";
-import authRouter from "./routes/authRouter";
-import express from 'express'
-import cors from 'cors'
-import cookieParser from 'cookie-parser'
-import bodyParser from 'body-parser'
-import {prisma} from "../db/prisma";
-import {errorHandler} from "./middleware/errorMiddleware";
+require("dotenv").config()
+import { connectToRabbit } from "../rabbitmq"
+import { connectToRedis } from "../db/redis"
+import authRouter from "./routes/authRouter"
+import express from "express"
+import cors from "cors"
+import cookieParser from "cookie-parser"
+import bodyParser from "body-parser"
+import { prisma } from "../db/prisma"
+import { errorHandler } from "./middleware/errorMiddleware"
 
 const app = express()
 
 async function main() {
     await connectToRedis()
-    await connectToRabbit(); // Connect to RabbitMQ
+    await connectToRabbit() // Connect to RabbitMQ
 
     // 1.Body Parser
-    app.use(bodyParser.json({ limit: '10kb' }))
+    app.use(bodyParser.json({ limit: "10kb" }))
     app.use(bodyParser.urlencoded({ extended: true }))
 
     // 2. Cookie Parser
@@ -27,7 +26,7 @@ async function main() {
     app.use(cors())
 
     // ROUTES
-    app.use('/auth', authRouter)
+    app.use("/auth", authRouter)
 
     // ERROR HANDLING MIDDLEWARE
     app.use(errorHandler)

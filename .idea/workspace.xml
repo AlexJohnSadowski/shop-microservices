@@ -1,13 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c864dda5-5eb9-4cd1-9b60-6ca5ff3abc83" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shop-microservices.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/tslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsonSchemas.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/pnpm-lock.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/prisma/migrations/20231114213115_add_fields/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/rabbitmq/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/rabbitmq/token-validation-queue/token-validation-queue.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/controllers/product.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/db/prisma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/middleware/errorMiddleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/rabbitmq/auth-microservice/token-validation-queue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/rabbitmq/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/routes/productRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/schemas/product.schema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/schemas/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/utils/appError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/build/utils/jwtCookiesSettings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/pnpm-lock.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/src/middleware/errorMiddleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/src/rabbitmq/auth-microservice/token-validation-queue.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/src/rabbitmq/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/src/routes/productRouter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/src/utils/jwtCookiesSettings.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/.env" beforeDir="false" afterPath="$PROJECT_DIR$/auth/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/message-broker/rabbit-mq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/message-broker/rabbit-mq.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/db/prisma.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/db/prisma.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/db/redis.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/db/redis.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/message-broker/rabbit-mq.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/auth/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/prisma/migrations/20231010143744_init/migration.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/auth/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/controller/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/controller/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/middleware/authMiddleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/middleware/authMiddleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/middleware/errorMiddleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/middleware/errorMiddleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/routes/authRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/routes/authRouter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/schemas/user.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/schemas/user.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/schemas/validate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/schemas/validate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/service/jwt/jwt.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/service/jwt/jwt.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/service/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/service/user/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/utils/appError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/utils/appError.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/utils/jwtValidation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/utils/jwtValidation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/auth/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/products/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/.idea/express.iml" beforeDir="false" afterPath="$PROJECT_DIR$/products/.idea/express.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/products/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/products/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/db/prisma.ts" beforeDir="false" afterPath="$PROJECT_DIR$/products/src/db/prisma.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/products/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/products/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/prisma/migrations/20231030182801_init/migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/products/prisma/migrations/20231114205830_/migration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/prisma/migrations/migration_lock.toml" beforeDir="false" afterPath="$PROJECT_DIR$/products/prisma/migrations/migration_lock.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/products/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/controllers/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/products/src/controllers/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/products/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/middleware/errorMiddleware.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/routes/productRouter.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/schemas/product.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/products/src/schemas/product.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/schemas/validate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/products/src/schemas/validate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/utils/appError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/products/src/utils/appError.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/tsconfig.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,28 +98,58 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/auth/rabbitmq/index.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/auth/rabbitmq/token-validation-queue/token-validation-queue.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/products/.eslintrc" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/products/db/prisma.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/products/prisma/schema.prisma" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/products/rabbitmq/auth-microservice/token-validation-queue.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/products/rabbitmq/index.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/products/src/controllers/product.controller.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/products/src/routes/productRouter.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/products/src/utils/jwtCookiesSettings.ts" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2UINmOXOelTWSB4Cuu0UTFtweYo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "ts.external.directory.path": "/Users/asado/Desktop/shop-microservices/auth/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;js.linters.configure.manually.selectedtslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/asado/Desktop/shop-microservices/auth/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/asado/Desktop/shop-microservices/auth/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/product/src/schemas" />
@@ -55,9 +159,11 @@
       <recent name="$PROJECT_DIR$/auth/src/schemas" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/products/src" />
+      <recent name="$PROJECT_DIR$/products" />
+      <recent name="$PROJECT_DIR$/products/rabbitmq/to-auth" />
+      <recent name="$PROJECT_DIR$/products/rabbitmq" />
       <recent name="$PROJECT_DIR$/product/src" />
-      <recent name="$PROJECT_DIR$/auth" />
-      <recent name="$PROJECT_DIR$/auth/src" />
     </key>
   </component>
   <component name="RunManager">
@@ -91,6 +197,14 @@
       <workItem from="1699806806213" duration="19000" />
       <workItem from="1699806844075" duration="281000" />
       <workItem from="1699808589721" duration="2789000" />
+      <workItem from="1699990625137" duration="21917000" />
+      <workItem from="1700058989984" duration="67000" />
+      <workItem from="1700059115341" duration="9385000" />
+      <workItem from="1700080549073" duration="2667000" />
+      <workItem from="1701801460324" duration="10348000" />
+      <workItem from="1701865715831" duration="312000" />
+      <workItem from="1701866453240" duration="3164000" />
+      <workItem from="1704748352317" duration="3574000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1699807028231</created>
@@ -104,6 +218,13 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/products/db/prisma.js" />
+        <option value="$PROJECT_DIR$/products/rabbitmq/auth-microservice/token-validation-queue.js" />
+        <option value="$PROJECT_DIR$/products/rabbitmq/index.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

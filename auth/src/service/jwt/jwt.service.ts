@@ -1,7 +1,7 @@
-import jwt, { SignOptions } from 'jsonwebtoken'
+import jwt, { SignOptions } from "jsonwebtoken"
 
 const getKey = (
-    keyName: 'accessTokenPrivateKey' | 'refreshTokenPrivateKey' | 'accessTokenPublicKey' | 'refreshTokenPublicKey'
+    keyName: "accessTokenPrivateKey" | "refreshTokenPrivateKey" | "accessTokenPublicKey" | "refreshTokenPublicKey"
 ) => {
     const keyMap = {
         accessTokenPrivateKey: process.env.ACCESS_TOKEN_PRIVATE_KEY_SECRET,
@@ -18,17 +18,16 @@ const getKey = (
     return key
 }
 
-// 'HS256' instead of rs just to simplify running it later on
 export const signJwt = (
     payload: object,
-    keyName: 'accessTokenPrivateKey' | 'refreshTokenPrivateKey',
+    keyName: "accessTokenPrivateKey" | "refreshTokenPrivateKey",
     options?: SignOptions
 ) => {
     const privateKey = getKey(keyName)
-    return jwt.sign(payload, privateKey, { ...options, algorithm: 'HS256' })
+    return jwt.sign(payload, privateKey, { ...options, algorithm: "HS256" })
 }
 
-export const verifyJwt = <T>(token: string, keyName: 'accessTokenPrivateKey' | 'refreshTokenPrivateKey'): T | null => {
+export const verifyJwt = <T>(token: string, keyName: "accessTokenPrivateKey" | "refreshTokenPrivateKey"): T | null => {
     const publicKey = getKey(keyName)
     try {
         return jwt.verify(token, publicKey) as T

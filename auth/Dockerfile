@@ -8,11 +8,13 @@ COPY package*.json ./
 # Development Stage
 FROM base as development
 
-RUN npm install
+RUN npm install -g pnpm
+
+RUN pnpm install
 
 COPY . .
 
-EXPOSE 8001
+EXPOSE 8002
 
 CMD ["npm", "run", "dev:local"]
 

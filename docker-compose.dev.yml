@@ -25,6 +25,7 @@ services:
       - my-network
     depends_on:
       - redis
+      - rabbitmq
       - postgres
   redis:
     image: redis:latest
@@ -33,6 +34,22 @@ services:
       - "6379:6379"
     networks:
       - my-network
+
+  products:
+    build:
+      context: ./products
+      target: development
+    volumes:
+      - ./products:/app
+    ports:
+      - "8002:8002"
+    environment:
+      - DATABASE_URL=postgresql://postgres:admin@postgres:5432/products?schema=public
+    networks:
+      - my-network
+    depends_on:
+      - postgres
+      - rabbitmq
 
   postgres:
     image: postgres:latest
@@ -47,8 +64,11 @@ services:
       - my-network
 
   rabbitmq:
-    image: "rabbitmq:management"
+    image: "rabbitmq:3.12-management-alpine"
     container_name: rabbitmq-container
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
     ports:
       - "5672:5672"
       - "15672:15672"

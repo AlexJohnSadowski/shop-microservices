@@ -1,14 +1,13 @@
-import { Request, Response, NextFunction } from 'express';
-import {validateJwt} from "../utils/jwtValidation";
-import createAppError from "../utils/appError";
-
+import { Request, Response, NextFunction } from "express"
+import { validateJwt } from "../utils/jwtValidation"
+import createAppError from "../utils/appError"
 
 export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
-    const user = await validateJwt(req);
+    const user = await validateJwt(req.cookies.refresh_token)
 
     if (!user) {
-        next(createAppError(403, 'Unauthorized'));
+        next(createAppError(403, "Unauthorized"))
     } else {
-        next();
+        next()
     }
-};
+}
