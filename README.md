@@ -1,8 +1,6 @@
 
 # 🚀 REST microservices
 
-![Your Project Image](URL_of_your_image)
-
 ## About This Project
 NOT FOR PROD!
 This is a repository designed as a playground for a variety of technologies in the realm of REST microservices. It's a perfect test bed for tinkering with Redis, RabbitMQ, NGINX configurations, and it's even Kubernetes-friendly, but for prod REST (especially without the swagger, is probably not the best solution :P ). While primarily for educational and developmental purposes.
