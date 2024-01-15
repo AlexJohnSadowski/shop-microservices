@@ -1,5 +1,6 @@
 
 # 🚀 REST microservices
+![Alt text](/public/images/diagram.png)
 
 ## About This Project
 NOT FOR PROD!
