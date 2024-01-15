@@ -4,9 +4,12 @@
 ## About This Project
 NOT FOR PROD!
 This is a repository designed as a playground for a variety of technologies in the realm of REST microservices. 
-It's a perfect test bed for tinkering with Redis, RabbitMQ, NGINX configurations, and it's even Kubernetes-friendly, but for prod REST (especially without the swagger, is probably not the best solution :P ). Primarily for educational and developmental purposes.
+It's a perfect test bed for tinkering with Redis, RabbitMQ, NGINX configurations, and it's even Kubernetes-friendly.
+Primarily for educational and developmental purposes.
+
 Also a custom JWT is implemented, so for the actual prod just use Clerk or something similar with asymmetric key (cuz here I just used a symmetric one to quickly set it up) and authenticate the microservices with the zero trust policy with the public key stored in cached or something - this one was just for fun.
 And yeah, left the .env file, so it would be easier for ya to run it quickly.
+
 ### 🧩 Technologies Used
 
 - **Express**: Building RESTful microservices
